@@ -11,7 +11,7 @@ export const ConfraternizationProvider = ({children}) => {
         if (index === -1) {
             setConfraternizationDrinks([...confraternizationDrinks, drink])
         } else {
-            alert ("cerveja já adicionada à confraternização")
+            alert ("drink already on your confraternization")
         }
     }
 

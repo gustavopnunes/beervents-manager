@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const Header = styled.header`
     width: 100%;
-    height: 230px;
+    /* height: 230px; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

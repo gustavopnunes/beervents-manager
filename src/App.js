@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       <Header>
         <h1>Events Manager</h1>
-        <p>You choose the guests and the beers, and we make sure everyone gets drunk ;)  </p>
+        <p>Choose your beers and add to your events by clicking the icons</p>
+        <p>Browse through your events with the menu </p>
         <nav>
-          <Link to = "/" >Drinks list</Link>
-          <Link to =  "/marriage" > Marriage </Link>
+          <Link to =  "/marriage" > Wedding </Link>
           <Link to =  "/confraternization" > Confraternization </Link>
           <Link to =  "/graduation" > Graduation </Link>
         </nav>

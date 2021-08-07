@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { GraduationContext } from "../../providers/Graduation";
 import DrinkCard from "../../components/DrinkCard";
+import { Link } from "react-router-dom";
 
 const Graduation = () => {
 
@@ -10,6 +11,9 @@ const Graduation = () => {
     return (
         <>
             <h2>YOUR GRADUATION DRINKS</h2>
+            <nav className = "drinks_list_link">
+                <Link to = "/" >Choose ur drinks</Link>
+            </nav>
         <section>
             {graduationDrinks.map(drink => (
                 <DrinkCard key = {drink.id}>

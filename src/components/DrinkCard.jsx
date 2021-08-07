@@ -86,6 +86,7 @@ const DrinkCard = styled.li`
             background-color: blanchedalmond;
             font-size: .8rem;
         }
+
 `
 
 export default DrinkCard;

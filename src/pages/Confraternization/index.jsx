@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ConfraternizationContext } from "../../providers/Confraternization";
 import DrinkCard from "../../components/DrinkCard";
+import { Link } from "react-router-dom";
 
 const Confraternization = () => {
 
@@ -9,6 +10,9 @@ const Confraternization = () => {
     return (
         <>
             <h2>YOUR CONFRATERNIZATION DRINKS</h2>
+            <nav className = "drinks_list_link">
+                <Link to = "/" >Choose ur drinks</Link>
+            </nav>
         <section>
             {confraternizationDrinks.map(drink => (
                 <DrinkCard key = {drink.id}>

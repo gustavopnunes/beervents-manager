@@ -11,7 +11,7 @@ export const GraduationProvider = ({children}) => {
         if (index === -1) {
         setGraduationDrinks([...graduationDrinks, drink]);
         } else {
-            alert("cerveja já adicionada à graduação")
+            alert("drink already on your graduation")
         }
     }
 

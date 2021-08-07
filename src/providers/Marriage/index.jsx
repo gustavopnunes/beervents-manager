@@ -11,7 +11,7 @@ export const MarriageProvider = ({children}) => {
         if (index === -1) {
         setMarriageDrinks([...marriageDrinks, drink]);
         } else {
-            alert("cerveja já adicionada ao casamento")
+            alert("drink already on your wedding")
         }
     }
 

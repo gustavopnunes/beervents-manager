@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { MarriageContext } from "../../providers/Marriage";
 import DrinkCard from "../../components/DrinkCard";
+import { Link } from "react-router-dom";
 
 const Marriage = () => {
 
@@ -10,6 +11,9 @@ const Marriage = () => {
     return (
         <>
             <h2>YOUR WEDDING DRINKS</h2>
+            <nav className = "drinks_list_link">
+                <Link to = "/" >Choose ur drinks</Link>
+            </nav>
         <section>
             {marriageDrinks.map(drink => (
                 <DrinkCard key = {drink.id}>

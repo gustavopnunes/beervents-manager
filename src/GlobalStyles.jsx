@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin: 0 auto;
+        margin: 24px auto;
     }
 
     nav a {
@@ -44,15 +44,17 @@ const GlobalStyle = createGlobalStyle`
         color: snow;
         text-transform: uppercase;
         border-bottom: 2px solid snow;
-        padding: 0 4px;
         font-weight: bold;
         font-size: 1.2rem;
         width: 200px;
         margin: 1px 4px;
         background-color: #967272;
+        border-radius: 6px;
+        padding: 4px 2px;
         &:hover{
             transition: .3s ease;
-            transform: scale(90%);
+            transform: scale(95%);
+            color: #6e3c1e;
         }
     }
 
@@ -72,12 +74,32 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         height: 32px;
         border-radius: 4px;
+        margin: 4px;
+
         &:hover {
             background-color: #473b3b;
             transition: .2s ease;
         }
     }
 
+    .drinks_list_link{
+        width: 100%;
+        height:60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a{
+            color: #ffdb0d;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        font-size: 3rem;
+    }
 `;
 
 export default GlobalStyle;
