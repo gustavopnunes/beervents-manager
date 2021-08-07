@@ -3,7 +3,7 @@ import styled from "styled-components";
 const DrinkCard = styled.li`
     background-color: #FFFBDB;
     width: 270px;
-    height: 250px;
+    height: 260px;
     margin: 2px;
     list-style: none;
     border-radius: 2px;
@@ -12,10 +12,28 @@ const DrinkCard = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     position: relative;
     border-radius: 10px;
 
+    .drink_volume {
+        font-size: .8rem;
+    }
+
+    .drink_description {
+        font-size: .7rem;
+        background-color: #8080807b;
+    }
+
+    .add-to-event_buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #f1d94e;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
         p {
             font-size: .9rem;
             color: #383838;
@@ -27,20 +45,22 @@ const DrinkCard = styled.li`
         }
 
         div {
-            margin: 0 auto;
             width: 200px;
             height: 40px;
             font-size: 2rem;
             color: snow;
             display: flex;
             justify-content: space-evenly;
-            position: absolute;
-            bottom: 0;
+            background-color: #944343;
+            border-radius: 5px;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
 
             span {
                 width: 35px;
                 cursor: pointer;
                 color: #FF674D;
+                margin-top: 3px;
             }
 
             span:hover {
@@ -49,16 +69,20 @@ const DrinkCard = styled.li`
                 transform: scale(120%);
                 background-color: #FFEC51;
                 border-radius: 10px;
+                position: relative;
+                z-index: 1;
                 ::before {
                     font-size: .7rem;
                     position: absolute;
                     bottom: 0;
-                    top: 30%;
+                    top: 60%;
                     right: 50%;
                     color: red;
                     transform: translate(50%, 50%);
                     background-color: #FFEC51;
                     padding: 2px;
+                    display: flex;
+                    align-items: center;
                 }
             }
 
@@ -83,7 +107,6 @@ const DrinkCard = styled.li`
 
         .question {
             color: black;
-            background-color: blanchedalmond;
             font-size: .8rem;
         }
 

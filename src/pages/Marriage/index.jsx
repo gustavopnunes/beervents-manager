@@ -22,8 +22,6 @@ const Marriage = () => {
                 <p>First brewed: {drink.first_brewed}</p>
                 <p>{drink.tagline}</p>
                 <button onClick = {() => removeFromMarriage(drink.id)}>remove from wedding</button>
-                <div>
-                </div>
             </DrinkCard>            
             ))}
 

@@ -22,8 +22,6 @@ const Graduation = () => {
                 <p>First brewed: {drink.first_brewed}</p>
                 <p>{drink.tagline}</p>
                 <button onClick = {() => removeFromGraduation(drink.id)}>remove from graduation</button>
-                <div>
-                </div>
             </DrinkCard>            
             ))}
 

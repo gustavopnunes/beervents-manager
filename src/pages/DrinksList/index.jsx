@@ -39,10 +39,12 @@ const DrinksList = () => {
                 <DrinkCard key = {drink.id}>
                     <img src = {drink.image_url} alt = {drink.name} />
                     <p>{drink.name}</p>
+                    <p className = "drink_description">{drink.tagline}</p>
                     <p>First brewed: {drink.first_brewed}</p>
-                    <p>{drink.tagline}</p>
-                        <p className = "question">In what event you want to add?</p>
-                    <div>
+                    <p className = "drink_volume">volume: {drink.volume.value} litres</p>
+                    <div className = "add-to-event_buttons">
+                        <p className = "question">In what event?</p>
+                        <div>
                         <span className = "wedding_icon">
                             <GiLovers onClick = {() => addToMarriage({id: drink.id, name: drink.name, image_url: drink.image_url, description: drink.description, first_brewed:drink.first_brewed})} />
                         </span>
@@ -50,6 +52,7 @@ const DrinksList = () => {
                             <GiGraduateCap onClick = {() => addToGraduation({id: drink.id, name: drink.name, image_url: drink.image_url, description: drink.description, first_brewed:drink.first_brewed})} /></span>
                         <span className = "confraternization_icon">
                             <GiPartyPopper onClick = {() => addToConfraternization({id: drink.id, name: drink.name, image_url: drink.image_url, description: drink.description, first_brewed:drink.first_brewed})} /></span>
+                            </div>
                     </div>
                 </DrinkCard>
             ))}

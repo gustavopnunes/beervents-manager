@@ -21,8 +21,6 @@ const Confraternization = () => {
                 <p>First brewed: {drink.first_brewed}</p>
                 <p>{drink.tagline}</p>
                 <button onClick = {() => removeFromConfraternization(drink.id)}>remove from confraternization</button>
-                <div>
-                </div>
             </DrinkCard>            
             ))}
 
