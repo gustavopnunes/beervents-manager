@@ -4,19 +4,19 @@ import Graduation from "./pages/Graduation";
 import Marriage from "./pages/Marriage";
 import Confraternization from "./pages/Confraternization"
 import Header from "./components/Header";
+import Footer from "./components/Footer"
+import {Toaster} from "react-hot-toast"
+import Nav from "./components/Nav"
 
 function App() {
   return (
     <div className="App">
+      <Toaster />
       <Header>
-        <h1>Events Manager</h1>
-        <p>Choose your beers and add to your events by clicking the icons</p>
-        <p>Browse through your events with the menu </p>
-        <nav>
-          <Link to =  "/marriage" > Wedding </Link>
-          <Link to =  "/confraternization" > Confraternization </Link>
-          <Link to =  "/graduation" > Graduation </Link>
-        </nav>
+        <Link className = "logo" to = "/"><h1>Beervents Manager</h1></Link>
+        <p>You choose the beers and the parties. </p>
+          <p>We make sure everyone gets drunk. </p>
+        <Nav />
       </Header>
       <Switch>
         <Route exact path = "/">
@@ -32,6 +32,9 @@ function App() {
           <Confraternization />
         </Route>
       </Switch>
+      <Footer>
+        <p>made with <s>love</s> beers by Greg - Kenzie Academy Brasil</p>
+      </Footer>
     </div>
   );
 }

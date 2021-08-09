@@ -3,18 +3,24 @@ import styled from "styled-components";
 const DrinkCard = styled.li`
     background-color: #FFFBDB;
     width: 270px;
-    height: 260px;
+    height: 300px;
     margin: 2px;
     list-style: none;
     border-radius: 2px;
     color: #0CBABA;
-    padding: 14px;
+    padding: 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
     border-radius: 10px;
+    box-shadow: 1px 5px 5px 2px rgba(0, 0, 0, 0.2);
+
+    .drink_name {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 
     .drink_volume {
         font-size: .8rem;
@@ -22,7 +28,7 @@ const DrinkCard = styled.li`
 
     .drink_description {
         font-size: .7rem;
-        background-color: #8080807b;
+        background-color: #80808030;
     }
 
     .add-to-event_buttons {

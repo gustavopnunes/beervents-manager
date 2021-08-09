@@ -1,4 +1,5 @@
 import { createContext, useState, useContext } from "react";
+import toast from "react-hot-toast";
 
 export const GraduationContext = createContext();
 
@@ -10,8 +11,13 @@ export const GraduationProvider = ({children}) => {
         let index = graduationDrinks.findIndex(el => el.id === drink.id);
         if (index === -1) {
         setGraduationDrinks([...graduationDrinks, drink]);
+        toast.success(`${drink.name} was added to your graduation!`, {
+            position: "top-right",
+        })
         } else {
-            alert("drink already on your graduation")
+            toast.error(`${drink.name} is already on your graduation!`, {
+                position: "top-right",
+            })
         }
     }
 
@@ -20,6 +26,9 @@ export const GraduationProvider = ({children}) => {
             drinkOnGraduation => drinkOnGraduation.id !== drink
         )
         setGraduationDrinks(newGraduationDrinks)
+        toast.success("removed!", {
+            position: "top-right",
+        })
     }
 
     return (

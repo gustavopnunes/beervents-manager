@@ -5,6 +5,7 @@ import { useGraduation } from "../../providers/Graduation";
 import { useConfraternization } from "../../providers/Confraternization";
 import DrinkCard from "../../components/DrinkCard";
 import {GiLovers, GiGraduateCap, GiPartyPopper} from "react-icons/gi"
+import PageArrows from "../../components/PageArrows"
 
 const DrinksList = () => {
 
@@ -31,14 +32,13 @@ const DrinksList = () => {
 
     return (
         <>
-        <ul>
-            
-
-            
+        <PageArrows className = "right" onClick = {nextPage}/>
+        <PageArrows className = "left" onClick = {previousPage}/>
+        <ul>            
             {drinksData.map(drink => (
                 <DrinkCard key = {drink.id}>
                     <img src = {drink.image_url} alt = {drink.name} />
-                    <p>{drink.name}</p>
+                    <p className = "drink_name">{drink.name}</p>
                     <p className = "drink_description">{drink.tagline}</p>
                     <p>First brewed: {drink.first_brewed}</p>
                     <p className = "drink_volume">volume: {drink.volume.value} litres</p>
@@ -57,8 +57,6 @@ const DrinksList = () => {
                 </DrinkCard>
             ))}
         </ul>
-        <button onClick = {previousPage}>previous page</button>
-        <button onClick = {nextPage}>next page</button>
         </>
     )
 }

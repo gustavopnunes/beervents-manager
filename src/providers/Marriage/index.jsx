@@ -1,4 +1,5 @@
 import { createContext, useState, useContext } from "react";
+import toast from "react-hot-toast";
 
 export const MarriageContext = createContext();
 
@@ -10,8 +11,13 @@ export const MarriageProvider = ({children}) => {
         let index = marriageDrinks.findIndex(el => el.id === drink.id);
         if (index === -1) {
         setMarriageDrinks([...marriageDrinks, drink]);
+        toast.success(`${drink.name} was added to your wedding!`, {
+            position: "top-right",
+        })
         } else {
-            alert("drink already on your wedding")
+            toast.error(`${drink.name} is already on your wedding`, {
+                position: "top-right",
+            })
         }
     }
 
@@ -20,6 +26,9 @@ export const MarriageProvider = ({children}) => {
             drinkOnMarriage => drinkOnMarriage.id !== drink
         )
         setMarriageDrinks(newMarriageDrinks)
+        toast.success("removed!", {
+            position: "top-right",
+        })
     }
 
     return (

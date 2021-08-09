@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { GraduationContext } from "../../providers/Graduation";
 import DrinkCard from "../../components/DrinkCard";
 import { Link } from "react-router-dom";
+import EventPage from "../../components/EventPage"
 
 const Graduation = () => {
 
@@ -9,10 +10,15 @@ const Graduation = () => {
     const {removeFromGraduation} = useContext(GraduationContext);
 
     return (
-        <>
-            <h2>YOUR GRADUATION DRINKS</h2>
+        <EventPage>
+            <h2 className = "page_title">YOUR GRADUATION DRINKS</h2>
+            {
+                graduationDrinks.length === 0 && 
+                <p className = "no_drinks">You didn't add any drinks to this event.
+                </p>
+            }
             <nav className = "drinks_list_link">
-                <Link to = "/" >Choose ur drinks</Link>
+                <Link to = "/" >Choose ur drinks!</Link>
             </nav>
         <section>
             {graduationDrinks.map(drink => (
@@ -21,12 +27,12 @@ const Graduation = () => {
                 <p>{drink.name}</p>
                 <p>First brewed: {drink.first_brewed}</p>
                 <p>{drink.tagline}</p>
-                <button onClick = {() => removeFromGraduation(drink.id)}>remove from graduation</button>
+                <button className = "remove_btn" onClick = {() => removeFromGraduation(drink.id)}>remove from graduation</button>
             </DrinkCard>            
             ))}
 
         </section>
-        </>
+        </EventPage>
     )
 }
 

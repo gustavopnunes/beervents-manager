@@ -1,4 +1,5 @@
 import { createContext, useState, useContext } from "react";
+import toast from "react-hot-toast";
 
 export const ConfraternizationContext = createContext();
 
@@ -10,8 +11,13 @@ export const ConfraternizationProvider = ({children}) => {
         let index = confraternizationDrinks.findIndex(el => el.id === drink.id);
         if (index === -1) {
             setConfraternizationDrinks([...confraternizationDrinks, drink])
+            toast.success(`${drink.name} was added to confraternization!`, {
+                position: "top-right",
+            })
         } else {
-            alert ("drink already on your confraternization")
+            toast.error(`${drink.name} is already on you confraternization!`, {
+                position: "top-right"
+            })
         }
     }
 
@@ -20,6 +26,9 @@ export const ConfraternizationProvider = ({children}) => {
             drinkOnConfraternization => drinkOnConfraternization.id !== drink
         )
         setConfraternizationDrinks(newConfraternizationDrinks);
+        toast.success(`removed!`, {
+            position: "top-right"
+        })
     }
 
     return (

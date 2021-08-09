@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { MarriageContext } from "../../providers/Marriage";
 import DrinkCard from "../../components/DrinkCard";
 import { Link } from "react-router-dom";
+import EventPage from "../../components/EventPage"
 
 const Marriage = () => {
 
@@ -9,10 +10,15 @@ const Marriage = () => {
     const {removeFromMarriage} = useContext(MarriageContext)
 
     return (
-        <>
-            <h2>YOUR WEDDING DRINKS</h2>
+        <EventPage>
+            <h2 className = "page_title">YOUR WEDDING DRINKS</h2>
+            {
+                marriageDrinks.length === 0 && 
+                <p className = "no_drinks">You didn't add any drinks to this event.
+                </p>
+            }
             <nav className = "drinks_list_link">
-                <Link to = "/" >Choose ur drinks</Link>
+                <Link to = "/" >Choose ur drinks!</Link>
             </nav>
         <section>
             {marriageDrinks.map(drink => (
@@ -21,12 +27,12 @@ const Marriage = () => {
                 <p>{drink.name}</p>
                 <p>First brewed: {drink.first_brewed}</p>
                 <p>{drink.tagline}</p>
-                <button onClick = {() => removeFromMarriage(drink.id)}>remove from wedding</button>
+                <button className = "remove_btn" onClick = {() => removeFromMarriage(drink.id)}>remove from wedding</button>
             </DrinkCard>            
             ))}
 
         </section>
-        </>
+        </EventPage>
     )
 }
 
